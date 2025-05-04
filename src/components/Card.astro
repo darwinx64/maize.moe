@@ -1,0 +1,70 @@
+---
+interface Props {
+	href: string
+	language?: string
+	bg?: string /* 
+	in pixelmator:
+	 • gaussian blur 34px preserve transparency
+	 • layer 50% opacity
+	in css you cannot preserve transparency so it's better to do it manually
+	*/
+}
+const { href, language, bg } = Astro.props
+---
+<a href={`https://${href}`} style={`background-image: url("${bg}")`}>
+	<slot/>
+	{
+		language && <div class="lang" data-lang={language}>{language}</div>
+	}
+</a>
+<style>
+	a {
+		background: var(--bg-secondary);
+		background-position: center;
+		background-size: cover;
+		text-shadow: 0 0 5px rgba(0, 0, 0, 0.229);
+		box-shadow: inset 0px 0px 0px 1px #ffffff0d;
+		margin: 0;
+		border-radius: 5px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 5px;
+		text-decoration: none !important;
+		user-select: none;
+		color: var(--fg-primary);
+	}
+	a:hover {
+		cursor: pointer;
+	}
+	a :global(p) {
+		margin: 0;
+		line-height: 1.14;
+		font-weight: 400;
+		color: var(--fg-primary);
+	}
+	.lang {
+		color: var(--fg-primary);
+		font-weight: 700 !important;
+		font-size: 0.9rem;
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+		--lang-colour: grey;
+	}
+	.lang::before {
+		background-color: var(--lang-colour);
+		box-shadow: inset 0px 0px 0px 1px #ffffff36;
+		border-radius: 0.1rem;
+		width: 0.75rem;
+		height: 0.75rem;
+		content: "";
+		display: inline-block;
+	}
+	.lang[data-lang="Swift"] {
+		--lang-colour: #f87f29;
+	}
+	.lang[data-lang="Astro"] {
+		--lang-colour: #f82933;
+	}
+</style>

@@ -1,0 +1,18 @@
+{
+	"type": "module",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"astro": "^5.7.10",
+		
+		"@astrojs/mdx": "^4.2.6",
+		"@astrojs/rss": "^4.0.11",
+		"@astrojs/sitemap": "^3.3.1",
+		
+		"astro-expressive-code": "^0.41.2",
+		"@expressive-code/plugin-line-numbers": "^0.41.2"
+	}
+}

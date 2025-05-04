@@ -1,0 +1,78 @@
+---
+import BaseHead from "@components/BaseHead.astro"
+import Header from "@components/Header.astro"
+import Footer from "@components/Footer.astro"
+import { SITE_TITLE, SITE_DESCRIPTION } from "@constants"
+import { getCollection } from "astro:content"
+import FormattedDate from "@components/FormattedDate.astro"
+import { slide } from "astro:transitions"
+
+const posts = (await getCollection("blog")).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+)
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.img {
+				height: 360px;
+				width: 100%;
+				background-image: var(--src);
+				box-shadow: inset 0px 0px 0px 1px #ffffff36;
+				border-radius: 10px;
+				background-size: cover;
+				background-position: center;
+			}
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 2rem;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			ul li {
+				width: calc(50% - 1rem);
+			}
+			ul li:first-child {
+				width: 100%;
+				margin-bottom: 1rem;
+			}
+			ul li:first-child h1 {
+				font-size: 2.369rem;
+			}
+			ul li a {
+				text-decoration: none;
+			}
+			h1 {
+				margin: 30px 0 0 0;
+				line-height: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<ul>
+			{
+				posts.map(post =>
+					<li>
+						<a href={`/blog/${post.id}/`}>
+							<div class="img" transition:animate="slide" transition:name={post.data.heroImage} transition:persist style={`--src: url("${post.data.heroImage}")`} />
+							<h1 transition:animate={slide({ duration: 1 })} transition:name={post.data.title} transition:persist>{post.data.title}</h1>
+							<FormattedDate
+								date={post.data.pubDate}
+								transition:animate={slide({ duration: 1 })}
+								transition:name={post.data.pubDate.toString()}
+								transition:persist
+							/>
+						</a>
+					</li>
+				)
+			}
+		</ul>
+		<Footer />
+	</body>
+</html>

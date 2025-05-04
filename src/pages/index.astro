@@ -1,0 +1,67 @@
+---
+import Card from "@components/Card.astro"
+import CardGrid from "@components/CardGrid.astro"
+import Fren from "@components/Fren.astro"
+import { frens, works } from "@constants"
+import Layout from "@layouts/Main.astro"
+---
+
+<Layout>
+	<>
+		<div class="hero">
+			<h2>I am <b>tiramisu</b></h2>
+			<img width="64" height="64" src="https://github.com/darwinx64.png">
+		</div>
+	</>
+
+	<>
+		<p>
+			I like making apps, sites and reverse engineering things.
+			I make things primarily for Apple platforms as I find it interesting.
+			I do mostly Swift, Objective C, Rust, C++, and TypeScript.
+		</p>
+	</>
+
+	<>
+		<h3>My work</h3>
+		<CardGrid>
+			{
+				works.map(work =>
+					<Card href={work.link} language={work.lang} bg={work.background}>
+						{work.name}
+						<p>{work.description}</p>
+					</Card>
+				)
+			}
+		</CardGrid>
+	</>
+
+	<>
+		<h3>Friends</h3>
+		<div id="frens">
+			{
+				frens.map(fren => <Fren fren={fren} />)
+			}
+		</div>
+	</>
+</Layout>
+<style>
+	.hero {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		line-height: 0;
+		margin-bottom: 1rem;
+	}
+	.hero img {
+		width: 64px;
+		height: 64px;
+		border-radius: 0.25rem;
+	}
+</style>
+<script is:inline>
+	const frens = document.getElementById("frens")
+	for (var i = frens.children.length; i >= 0; i--) {
+		frens.appendChild(frens.children[Math.random() * i | 0])
+	}
+</script>

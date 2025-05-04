@@ -1,0 +1,123 @@
+@font-face {
+	font-family: "Maple Mono";
+	font-style: normal;
+	src: url("/fonts/maplemono.ttf");
+}
+@font-face {
+	font-family: "Maple Mono";
+	font-style: italic;
+	src: url("/fonts/maplemono-italic.ttf");
+}
+
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	src: url("/fonts/inter.ttf");
+}
+@font-face {
+	font-family: "Inter";
+	font-style: italic;
+	src: url("/fonts/inter-italic.ttf");
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+html {
+	color-scheme: dark;
+}
+
+body {
+	background-color: var(--bg-primary);
+	--fg-primary: #cfcfcf;
+	--fg-secondary: #bcbcbc;
+	--fg-tertiary: #787878;
+	--bg-primary: #161616;
+	--bg-secondary: #232323;
+	--bg-ternary: #292929;
+	--bg-tertiary: #353535;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+	line-height: 1.6;
+	margin: 40px auto;
+	padding: 0 10px;
+	max-width: 700px;
+}
+
+* {
+	color: var(--fg-secondary);
+	font-family: BlinkMacSystemFont, "Inter", sans-serif;
+	font-weight: 200;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight: 400;
+	color: var(--fg-primary);
+	margin: 0;
+}
+
+b {
+	font-weight: 600;
+}
+
+a {
+	font-weight: 700;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+kbd {
+	background: var(--bg-ternary);
+	border: 1px solid var(--bg-tertiary);
+	border-bottom: 2px solid var(--bg-tertiary);
+	user-select: none;
+	font-weight: 100;
+	padding: 0 5px;
+	border-radius: 0.3rem;
+	display: inline-block;
+}
+
+kbd:active {
+	border-bottom: 1px solid var(--bg-tertiary);
+	transform: translateY(2px) rotateX(15deg) !important;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+	transition: transform 0.1s;
+}
+
+mark {
+	background: rgb(255, 255, 255);
+	color: black;
+	font-weight: 700;
+	border-radius: 1px;
+	user-select: none;
+}
+
+sub {
+	display: block;
+}
+
+p {
+	display: block;
+	margin: 0 0 1rem 0;
+}
+
+hr {
+	border-color: black;
+	margin-bottom: 1rem;
+}
+
+::-webkit-scrollbar {
+	background-color: var(--bg-primary);
+	width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+	border: 4px solid rgba(0, 0, 0, 0);
+	background-clip: padding-box;
+	border-radius: 9999px;
+	background-color: var(--bg-ternary);
+}

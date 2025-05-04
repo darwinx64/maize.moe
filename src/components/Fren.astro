@@ -1,0 +1,19 @@
+---
+interface Props {
+	fren: { name: string, link: string, pfp: string }
+}
+const { fren } = Astro.props
+---
+<a title={fren.name} href={`https://${fren.link}`}>
+	<img width={40} height={40} src={fren.pfp}>
+</a>
+<style>
+	a {
+		text-decoration: none !important;
+		width: 40px;
+		height: 40px;
+	}
+	img {
+		border-radius: 0.25rem;
+	}
+</style>
