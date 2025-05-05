@@ -1,0 +1,44 @@
+<div class="tooltip">
+	<slot/>
+</div>
+<style>
+	div {
+		position: absolute;
+		left: 50%;
+		top: -350%; /* completely arbritrary ass number what the fuck why is it so hard just to position a tooltip ive done this before i swear it wasnt this annoying */
+		transform: translateX(calc(-50% - 2px));
+		padding: 2px 5px;
+		text-align: center;
+		display: none;
+		background: var(--bg-ternary);
+		outline: 1px solid var(--bg-tertiary);
+		border-radius: 5px;
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.45);
+	}
+	
+	div:before {
+		content: '';
+		display: block;  
+		position: absolute;
+		left: 50%;
+		top: 100%;
+		transform: translateX(-50%);
+		width: 0;
+		height: 0;
+		border: 10px solid transparent;
+		border-top-color: var(--bg-tertiary);
+	}
+
+	div:after {
+		content: '';
+		display: block;  
+		position: absolute;
+		left: 50%;
+		top: 100%;
+		transform: translateX(-50%);
+		width: 0;
+		height: 0;
+		border: 9px solid transparent;
+		border-top-color: var(--bg-ternary);
+	}
+</style>

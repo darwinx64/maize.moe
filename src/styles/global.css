@@ -20,8 +20,13 @@
 	src: url("/fonts/inter-italic.ttf");
 }
 
-@view-transition {
-	navigation: auto;
+@keyframes blogImageAnim {
+	from {
+		height: 360px;
+	}
+	to {
+		height: 160px;
+	}
 }
 
 html {
@@ -37,6 +42,8 @@ body {
 	--bg-secondary: #232323;
 	--bg-ternary: #292929;
 	--bg-tertiary: #353535;
+	--spring-easing: linear(0, 0.0014 0.52%, 0.0062, 0.014 1.68%, 0.0258 2.31%, 0.0578 3.59%, 0.1031 4.98%, 0.2048 7.52%, 0.4519 13.02%, 0.5625 15.62%, 0.6661 18.34%, 0.7534 21%, 0.7915, 0.826 23.66%, 0.8583, 0.8868 26.44%, 0.9128, 0.9352 29.33%, 0.955 30.84%, 0.9722 32.4%, 0.9949 35.12%, 1.011 38.07%, 1.0208 41.31%, 1.0251 45.02%, 1.0236 50.34%, 1.0087 64.4%, 1.0027 73.25%, 0.9998 83.78%, 0.9995 99.98%);
+	--spring-duration: 1.859s;
 	-webkit-font-smoothing: antialiased;
 	overflow-x: hidden;
 	line-height: 1.6;
