@@ -21,7 +21,7 @@ import Layout from "@layouts/Main.astro"
 	<CardGrid>
 		{
 			works.map(work =>
-				<Card href={work.link} language={work.lang} bg={work.background}>
+				<Card href={work.link} language={work.lang} bg={"/" + work.background}>
 					{work.name}
 					<p>{work.description}</p>
 				</Card>
