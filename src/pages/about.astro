@@ -1,0 +1,31 @@
+---
+import Card from "@components/Card.astro"
+import CardGrid from "@components/CardGrid.astro"
+import { works, things } from "@constants"
+import Layout from "@layouts/Main.astro"
+---
+
+<Layout>
+	<h2>About</h2>
+	<p>Here's what I know and what I've made!</p>
+
+	<h3>Stack</h3>
+	{
+		things.map(thing =>
+			<a href={"https://" + thing.href}>
+				<img width="24" height="24" src={"/stack/" + thing.name + ".svg"}>
+			</a>
+		)
+	}
+	<h3>Projects</h3>
+	<CardGrid>
+		{
+			works.map(work =>
+				<Card href={work.link} language={work.lang} bg={work.background}>
+					{work.name}
+					<p>{work.description}</p>
+				</Card>
+			)
+		}
+	</CardGrid>
+</Layout>

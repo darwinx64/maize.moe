@@ -102,3 +102,49 @@ export const frens = [
 		pfp: "https://github.com/blahai.png"
 	},
 ]
+export const things = [
+	{
+		name: "Swift",
+		href: "swift.org",
+	},
+	{
+		name: "Rust",
+		href: "rust-lang.org",
+	},
+	{
+		name: "TypeScript",
+		href: "typescriptlang.org",
+	},
+	{
+		name: "Node.js",
+		href: "nodejs.org",
+	},
+	{
+		name: "C++",
+		href: "en.wikipedia.org/wiki/C++"
+	},
+	{
+		name: "C Sharp",
+		href: "en.wikipedia.org/wiki/C_Sharp_(programming_language)"
+	},
+	{
+		name: "Lua",
+		href: "lua.org",
+	},
+	{
+		name: "Astro",
+		href: "astro.build",
+	},
+	{
+		name: "Kotlin",
+		href: "kotlinlang.org",
+	},
+	{
+		name: "React",
+		href: "react.dev",
+	},
+	{
+		name: "Python",
+		href: "python.org",
+	},
+]
