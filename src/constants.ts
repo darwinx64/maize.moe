@@ -58,7 +58,7 @@ export const frens = [
 	},
 	{
 		name: "angie",
-		link: "anx.vg",
+		link: "demi.sh",
 		pfp: "https://github.com/demiangels.png"
 	},
 	{
