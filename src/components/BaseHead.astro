@@ -30,10 +30,6 @@ const { title, description, image = "/blog-placeholder-1.jpg" } = Astro.props
 <!-- Font preloads -->
 <link rel="preload" href="/fonts/maplemono.ttf" as="font" type="font/ttf" crossorigin />
 <link rel="preload" href="/fonts/maplemono-italic.ttf" as="font" type="font/ttf" crossorigin />
-<link rel="preload" href="https://github.com/darwinx64.png" as="image" />
-{
-	frens.map(fren => <link rel="preload" href={fren.pfp} as="image" />)
-}
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
